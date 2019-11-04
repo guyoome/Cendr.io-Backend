@@ -5,8 +5,13 @@ const { AuthServices } = require('@services');
 
 /**
  * Request/Response structure
- */
-// req = { body: { email: 'xxx', firstname: 'xxx', lastname: 'xxx', password: 'xxxxxxxxx' } }
+ *  req = { body: {
+ *  lastname:string,
+ *  firstname:string,
+ *  email:string,
+ *  company:string,
+ *  password:string
+ * } }
 // res = { json: { token: 'xxxx' } }
 
 /**
@@ -15,11 +20,20 @@ const { AuthServices } = require('@services');
 const secure = async (req) => {
 
     const inputs = {};
-    
+
+    // TODO: check if already exist in db
     if (req.body.email === undefined || req.body.email === null) {
         throw new Error('Email undefined/null');
     } else if (!formatChecker.isEmail(req.body.email)) {
         throw new Error('Email don\'t follow rules');
+    }
+    try {
+        const auth = await AuthModel.findOne({ email: req.body.email });
+        if (!(auth === null) || !(auth === undefined)) {
+            throw new Error('Email : Already exist');
+        }
+    } catch (error) {
+        throw new Error('Email : Already exist');
     }
     inputs.email = req.body.email;
 
@@ -32,6 +46,11 @@ const secure = async (req) => {
         throw new Error('Lastname undefined/null');
     }
     inputs.lastname = secureInput.sanitizeName(req.body.lastname);
+
+    if (req.body.company === undefined || req.body.company === null) {
+        throw new Error('Company undefined/null');
+    }
+    inputs.company = secureInput.sanitizeString(req.body.company);
 
     if (req.body.password === undefined || req.body.password === null) {
         throw new Error('Password undefined/null');
@@ -46,7 +65,13 @@ const secure = async (req) => {
 /**
  * PROCESS :
  */
-const process = async (inputs) => {
+const process = async (param) => {
+    const inputs = param;
+    inputs.CreatedAt = Date();
+    inputs.UpdatedAt = inputs.CreatedAt;
+    inputs.username = secureInput.generateUsername(inputs.firstname, inputs.lastname, inputs.company);
+    console.log('inputs: ', inputs);
+
     try {
         const auth = await AuthModel.create(inputs);
         await UserModel.create(inputs);
@@ -63,7 +88,7 @@ const process = async (inputs) => {
 const registerUser = async (req, res) => {
     try {
         const inputs = await secure(req);
-        
+
         const token = await process(inputs);
 
         res.status(200).json({ token });

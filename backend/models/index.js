@@ -6,4 +6,5 @@ module.exports = {
     AuthModel: require('./Auth'),
     TodoModel: require('./Todo'),
     UserModel: require('./User'),
+    AshtrayModel: require('./Ashtray'),
 };

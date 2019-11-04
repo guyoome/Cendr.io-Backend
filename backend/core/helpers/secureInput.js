@@ -8,7 +8,7 @@ const sanitizeString = (textRaw) => {
 
     result = textRawToLowerCase;
 
-    return result;  
+    return result;
 };
 
 const sanitizeName = (textRaw) => {
@@ -21,10 +21,16 @@ const sanitizeName = (textRaw) => {
 
     result = textRawConcat;
 
-    return result;  
+    return result;
+};
+
+const generateUsername = (firstname, lastname, company) => {
+    const rdm = Math.random().toString(36).substring(7);
+    return firstname.concat('-', lastname, '-', company, '-', rdm);
 };
 
 module.exports = {
     sanitizeString,
     sanitizeName,
+    generateUsername,
 };
