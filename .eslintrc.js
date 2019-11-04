@@ -1,10 +1,14 @@
 module.exports = {
   "extends": "airbnb-base",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
   "env": {
     "node": true,
     "jest/globals": true
   },
-  "plugins": ["jest", "vue"],
+  "plugins": ["jest"],
   "rules": {
     "max-len": ["error", 1000], // Error for ligns containing too much char
     "no-console": 0,
