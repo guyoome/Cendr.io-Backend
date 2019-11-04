@@ -43,7 +43,7 @@
   },
   "_moduleAliases": {
     "@root": ".",
-    "@controllers": "./backend/controllers",
+    "@controllers": "./backend/routes/controllers",
     "@models": "./backend/models",
     "@core": "./backend/core",
     "@services": "./backend/services",
@@ -54,7 +54,7 @@
     "url": "git+https://github.com/guillaumeMECE/Cendr.io-Backend"
   },
   "keywords": [],
-  "author": "",
+  "author": "guillaume",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/guillaumeMECE/Cendr.io-Backend/issues"
