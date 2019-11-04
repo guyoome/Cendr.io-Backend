@@ -1,6 +1,6 @@
 # Routes
 
-## CreateUser
+## RegisterUser
 
 ```javascript
 /**
