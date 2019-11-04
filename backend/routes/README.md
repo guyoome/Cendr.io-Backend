@@ -40,3 +40,21 @@
 }
 */
 ```
+
+## CreateAshtray
+
+```javascript
+{
+    location:string,
+    userID:string,
+    questionID:string,
+}
+
+/* POSTMAN
+{
+    "location":"{79,97}",
+    "userID":"ObjectID(5dc002f4c8b9dc24c84a31ce)",
+    "questionID":"ObjectID(5dc001fda43e0b49543c45b1)",
+}
+*/
+```
