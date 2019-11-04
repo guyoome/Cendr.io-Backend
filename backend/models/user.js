@@ -17,6 +17,22 @@ const attributes = {
         type: String,
         required: true
     },
+    username: {
+        type: String,
+        required: true
+    },
+    company: {
+        type: String,
+        required: true
+    },
+    CreatedAt: {
+        type: String,
+        required: true
+    },
+    UpdatedAt: {
+        type: String,
+        required: true
+    },
     gender: {
         type: String
     },
