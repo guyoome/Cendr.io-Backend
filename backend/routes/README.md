@@ -13,6 +13,16 @@
     company:string,
     password:string
 }
+
+/* POSTMAN
+{
+    "email": "guimau@gmail.com",
+    "firstname": "guillaume",
+    "lastname": "maurin",
+    "password": "password123",
+    "company": "amazon"
+}
+*/
 ```
 
 ## LoginUser
@@ -22,4 +32,11 @@
     email:string,
     password:string
 }
+
+/* POSTMAN
+{
+    "email": "guimau@gmail.com",
+    "password": "password123"
+}
+*/
 ```
