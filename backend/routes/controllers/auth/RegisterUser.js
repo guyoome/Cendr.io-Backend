@@ -27,6 +27,14 @@ const secure = async (req) => {
     } else if (!formatChecker.isEmail(req.body.email)) {
         throw new Error('Email don\'t follow rules');
     }
+    try {
+        const auth = await AuthModel.findOne({ email: req.body.email });
+        if (!(auth === null) || !(auth === undefined)) {
+            throw new Error('Email : Already exist');
+        }
+    } catch (error) {
+        throw new Error('Email : Already exist');
+    }
     inputs.email = req.body.email;
 
     if (req.body.firstname === undefined || req.body.firstname === null) {
