@@ -2,8 +2,8 @@
 
 module.exports = {
 
-    // todo handlers
-    Create: require('./todo/Create'),
+    // Ashtray handlers
+    CreateAshtray: require('./ashtray/Create'),
     Delete: require('./todo/Delete'),
     Read: require('./todo/Read'),
     Update: require('./todo/Update'),
