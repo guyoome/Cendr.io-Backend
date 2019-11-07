@@ -40,7 +40,7 @@ const process = async (param) => {
 
     try {
         await AshtrayModel.create(inputs);
-        return 'Ashtray created';
+        return inputs;
     } catch (error) {
         throw new Error('Ashtray can\'t be create'.concat(' > ', error.message));
     }
