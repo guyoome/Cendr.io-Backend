@@ -5,6 +5,17 @@ const name = 'Ashtray';
 
 // TODO: ObjectID check type for userID & questionID
 const attributes = {
+    question: {
+        resultA: {
+            type: Number,
+        },
+        resultB: {
+            type: Number,
+        },
+        resultNull: {
+            type: Number,
+        }
+    },
     buttNumber: {
         type: Number,
         required: true
@@ -18,11 +29,18 @@ const attributes = {
         required: true
     },
     questionID: {
-        type: String,
-        required: true
+        type: String
     },
     batteryLife: {
         type: Number,
+    },
+    CreatedAt: {
+        type: String,
+        required: true
+    },
+    UpdatedAt: {
+        type: String,
+        required: true
     },
 };
 
