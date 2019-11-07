@@ -15,6 +15,7 @@
 }
 
 /* POSTMAN
+/api/register
 {
     "email": "guimau@gmail.com",
     "firstname": "guillaume",
@@ -34,6 +35,7 @@
 }
 
 /* POSTMAN
+/api/login
 {
     "email": "guimau@gmail.com",
     "password": "password123"
@@ -51,10 +53,11 @@
 }
 
 /* POSTMAN
+/api/ashtray/create
 {
     "location":"{79,97}",
     "userID":"ObjectID(5dc002f4c8b9dc24c84a31ce)",
-    "questionID":"ObjectID(5dc001fda43e0b49543c45b1)",
+    "questionID":"ObjectID(5dc001fda43e0b49543c45b1)"
 }
 */
 ```
