@@ -1,25 +1,21 @@
 require('dotenv').config();
 
 const isEmail = (email) => {
-    return email.includes('@');
+    const regex = /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/;
+
+    return regex.test(email);
 };
 
 const isPassword = (password) => {
-    return password.length >= (process.env.LENGTH_PASSWORD || 8);
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+
+    return regex.test(password);
 };
 
 const isLocation = (loc) => {
-    const toCheck = ['{', ',', '}'];
+    const regex = /^(?:\{)[-+]?([0-9]*\.[0-9]+|[0-9]+)(?:\,)[-+]?([0-9]*\.[0-9]+|[0-9]+)(?:\})$/;
 
-    const contains = (target, pattern) => {
-        let value = 0;
-        pattern.forEach((word) => {
-            value += target.includes(word);
-        });
-        return (value === pattern.length);
-    };
-
-    return contains(loc, toCheck);
+    return regex.test(loc);
 };
 
 module.exports = {
