@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose');
 
 const name = 'Question';
 
-// TODO: ObjectID check type for userID & questionID
+// TODO: ObjectID check type for userID & lifeTime
 const attributes = {
     text: {
         type: String,
@@ -22,7 +22,7 @@ const attributes = {
         required: true
     },
     lifeTime: {
-        type: Date,
+        type: String,
         required :true
     },
 };
@@ -31,6 +31,6 @@ const options = {};
 
 const QuestionShema = new Schema(attributes, options);
 
-const QuestionModel = model(name, AshtraySchema);
+const QuestionModel = model(name, QuestionShema);
 
 module.exports = QuestionModel;

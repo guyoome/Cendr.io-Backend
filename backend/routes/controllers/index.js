@@ -11,4 +11,7 @@ module.exports = {
     // auth handlers
     RegisterUser: require('./auth/RegisterUser'),
     LoginUser: require('./auth/LoginUser'),
+
+    // question handlers
+    CreateQuestion: require('./question/CreateQuestion')
 };

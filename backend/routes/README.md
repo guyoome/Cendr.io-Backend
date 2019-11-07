@@ -58,3 +58,27 @@
 }
 */
 ```
+## CreateQuestion
+
+```javascript
+{
+    text:string,
+    userID:string,
+    proposal_a:string,
+    proposal_b:string,
+    lifeTime: date
+
+}
+
+/* POSTMAN
+{
+    "text":"Ceci est un question ?",
+    "userID":"ObjectID(5dc426e59963700c116b1081)",
+    "proposal_a":"Oui",
+    "proposal_b":"Non",
+    "lifeTime":"05/03/2020"
+}
+*/
+```
+
+
