@@ -5,10 +5,6 @@ const name = 'Question';
 
 // TODO: ObjectID check type for userID & questionID
 const attributes = {
-    buttNumber: {
-        type: Number,
-        required: true
-    },
     text: {
         type: String,
         required: true
@@ -21,13 +17,13 @@ const attributes = {
         type: String,
         required: true
     },
-    lifeTi: {
-        type: Date,
-        required: true
-    },
     userID: {
         type: String,
         required: true
+    },
+    lifeTime: {
+        type: Date,
+        required :true
     },
 };
 
