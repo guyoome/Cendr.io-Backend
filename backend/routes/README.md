@@ -80,5 +80,48 @@
 }
 */
 ```
+## ReadQuestions
+
+```javascript
+{}
+
+/* POSTMAN
+req
+{}
+res
+[{       "_id": "5dc43aa8809e2a11a8a19aba",
+        "userID": "objectid(5dc426e59963700c116b1081)",
+        "text": "Ceci est un question ?",
+        "proposal_a": "oui",
+        "proposal_b": "non",
+        "lifeTime": "05/03/2020",
+        "__v": 0
+}]
+*/
+```
+
+## ReadQuestion
+
+```javascript
+{}
+
+/* POSTMAN
+req
+{
+    params {
+        id : Number
+    }
+}
+res
+{        "_id": "5dc43aa8809e2a11a8a19aba",
+        "userID": "objectid(5dc426e59963700c116b1081)",
+        "text": "Ceci est un question ?",
+        "proposal_a": "oui",
+        "proposal_b": "non",
+        "lifeTime": "05/03/2020",
+        "__v": 0
+}
+*/
+```
 
 

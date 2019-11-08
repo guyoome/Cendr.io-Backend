@@ -17,7 +17,7 @@ const { Read, Create, Delete, Update } = require('@controllers');
 const { RegisterUser, LoginUser } = require('@controllers');
 
 // QUESTION IMPORT
-const { CreateQuestion, ReadQuestions } = require('@controllers');
+const { CreateQuestion, ReadQuestions, ReadQuestion } = require('@controllers');
 
 /**
  * Routes
@@ -34,6 +34,7 @@ router.patch('/update/:id', Update);
 
 // QUESTION ROUTES 
 router.post('/question/add', CreateQuestion);
-router.get('/question/read',ReadQuestions)
+router.get('/question/read',ReadQuestions);
+router.get('/question/read/:id',ReadQuestion);
 
 module.exports = router;

@@ -2,7 +2,15 @@ const { QuestionModel } = require('@models');
 /**
  * Request structure
  * req = { body: { } }
- * res = { json: { } }
+ * res = { json: [{ 
+ *                  "_id": "5dc43aa8809e2a11a8a19aba",
+ *                  "userID": "objectid(5dc426e59963700c116b1081)",
+ *                  "text": string,
+ *                  "proposal_a": string,
+ *                  "proposal_b": string,
+ *                  "lifeTime": string
+ *               }] 
+ * }
  */
 
 /**
@@ -17,7 +25,9 @@ const secure = async req => {
   /**
    * PROCESS :
    */
-  const process = async inputs => {};
+  const process = async inputs => {
+    return QuestionModel.find().exec();
+  };
   
   /**
    * LOGIC :
@@ -28,8 +38,7 @@ const secure = async req => {
   
       const param = await process(inputs);
       
-      const questions = await QuestionModel.find().exec();
-      res.status(200).json(questions);
+      res.status(200).json(param);
     } catch (error) {
       console.log("ERROR MESSAGE :", error.message);
       console.log("ERROR :", error);
