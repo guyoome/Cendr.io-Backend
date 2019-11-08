@@ -33,7 +33,7 @@ router.post('/login', LoginUser);
 
 // TODO ROUTES
 router.post('/ashtray/create', CreateAshtray);
-router.get('/ashtray/readone/:id', ReadOneAshtray);
+router.get('/ashtray/read/:id', ReadOneAshtray);
 router.get('/ashtray/read', ReadAshtray);
 router.put('/ashtray/reset/:id', ResetAshtray);
 router.patch('/ashtray/update/:id', UpdateAshtray);
