@@ -16,11 +16,6 @@ const secure = async (req) => {
     }
     inputs.id = req.params.id;
 
-    if (req.body.buttNumber === undefined || req.body.buttNumber === null) {
-        throw new Error('buttNumber undefined/null');
-    }
-    inputs.buttNumber = req.body.buttNumber;
-
     return inputs;
 };
 
@@ -28,21 +23,18 @@ const secure = async (req) => {
  * PROCESS :
  */
 const process = async (params) => {
-    const inputs = params;
-    inputs.UpdatedAt = Date();
     try {
-        const data = await AshtrayModel.findByIdAndUpdate(inputs.id, inputs).exec();
-
+        const data = await AshtrayModel.findById(params.id).exec();
         return data;
     } catch (error) {
-        throw new Error('Ashtray can\'t be Update'.concat(' > ', error.message));
+        throw new Error('Ashtray can\'t be Read'.concat(' > ', error.message));
     }
 };
 
 /**
  * LOGIC :
  */
-const update = async (req, res) => {
+const readOne = async (req, res) => {
     try {
         const inputs = await secure(req);
 
@@ -55,4 +47,4 @@ const update = async (req, res) => {
         res.status(400).json({ 'message': error.message });
     }
 };
-module.exports = update;
+module.exports = readOne;

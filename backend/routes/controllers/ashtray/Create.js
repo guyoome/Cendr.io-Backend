@@ -60,7 +60,7 @@ const createAshtray = async (req, res) => {
     } catch (error) {
         console.log('ERROR MESSAGE :', error.message);
         console.log('ERROR :', error);
-        res.status(400).json({ message: error.message });
+        res.status(400).json({ 'message': error.message });
     }
 };
 module.exports = createAshtray;
