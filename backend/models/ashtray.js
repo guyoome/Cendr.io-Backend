@@ -42,6 +42,11 @@ const attributes = {
         type: String,
         required: true
     },
+    token: {
+        type: String,
+        required: true
+    }
+
 };
 
 const options = {};

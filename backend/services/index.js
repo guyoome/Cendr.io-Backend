@@ -2,6 +2,7 @@
 
 module.exports = {
 
-    AuthServices: require('./AuthServices')
+    AuthServices: require('./AuthServices'),
+    AshTrayServices: require('./AshtrayServices')
 
 };

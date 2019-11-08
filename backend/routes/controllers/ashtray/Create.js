@@ -1,5 +1,7 @@
 const { secureInput, formatChecker } = require('@core');
 const { AshtrayModel } = require('@models');
+const { AuthServices } = require('@services');
+
 /**
  * Request structure
  * req = { body: {location:{xx,xx}, userID:string, questionID:string, } }
@@ -39,8 +41,11 @@ const process = async (param) => {
     console.log('inputs: ', inputs);
 
     try {
-        const data = await AshtrayModel.create(inputs);
-        return data;
+       const data = await AshtrayModel.create(inputs);
+        
+       const token = AuthServices.generateToken(data);
+
+        return token;
     } catch (error) {
         throw new Error('Ashtray can\'t be create'.concat(' > ', error.message));
     }
@@ -56,7 +61,9 @@ const createAshtray = async (req, res) => {
 
         const data = await process(inputs);
 
+        
         res.status(200).json({ data });
+
     } catch (error) {
         console.log('ERROR MESSAGE :', error.message);
         console.log('ERROR :', error);

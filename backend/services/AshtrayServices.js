@@ -5,11 +5,8 @@ const jwt = require('jsonwebtoken');
 const generateToken = (cred) => {
     try {
         const jwtPayload = {
-            auth: {
+            ashtray: {
                 id: cred._id,
-            },
-            user: {
-                id: cred.user_id,
             }
         };
 

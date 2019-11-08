@@ -70,8 +70,8 @@ const loginUser = async (req, res) => {
         
         const token = await process(inputs);
         
-        res.cookie('token',token,{ expires: new Date(Date.now() + 900000000000000000000000), httpOnly: true });
-        res.status(200).json(token);
+        res.cookie('token',token,{ expires: new Date(Date.now() + 9000000000000), httpOnly: true });
+        res.status(200).json({token : token});
     } catch (error) {
         console.log('ERROR MESSAGE :', error.message);
         console.log('ERROR :', error);
