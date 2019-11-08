@@ -48,7 +48,6 @@ const secure = async (req) => {
    */
   const process = async (inputs) => {
       try{
-          console.log(inputs)
         const newQuestion = await QuestionModel.create(inputs);
         return newQuestion;
     }catch(error) {

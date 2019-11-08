@@ -15,6 +15,6 @@ const attributes = {
 
 const options = {};
 
-const User_QuestionShema = new Shema(attributes, options);
-const User_QuestionModel = model(name, User_QuestionShema);  
-module.exports = User_QuestionModel;
+const UserQuestionShema = new Shema(attributes, options);
+const UserQuestionModel = model(name, UserQuestionShema);  
+module.exports = UserQuestionModel;
