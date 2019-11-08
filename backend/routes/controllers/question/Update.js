@@ -2,7 +2,9 @@ const { secureInput, formatChecker } =require('@core');
 const { QuestionModel } = require('@models');
 /**
  * Request structure
- * req = { body: {text:string, proposal_a:string, proposal_b:string, userId: string, lifeTime : mm/dd/yyyy } }
+ * req = { 
+ *      params : {id : Number}
+ *      body: {text:string, proposal_a:string, proposal_b:string, userId: string, lifeTime : mm/dd/yyyy } }
  * res = { json: { } }
  */
 
@@ -11,7 +13,10 @@ const { QuestionModel } = require('@models');
  */
 const secure = async (req) => {
     const inputs = {};
-    
+    if(req.params.id === undefined || req.params.id === null){
+        throw new Error('id is null/undefined')
+    }
+    inputs.id = req.params.id;
     if (req.body.userID === undefined || req.body.userID === null) {
         throw new Error('UserID undefined/null');
     }
@@ -48,29 +53,27 @@ const secure = async (req) => {
    */
   const process = async (inputs) => {
       try{
-          console.log(inputs)
-        const newQuestion = await QuestionModel.create(inputs);
-        return newQuestion;
+        await QuestionModel.updateOne({_id : inputs.id},inputs);
+        return QuestionModel.findOne({_id: inputs.id}).exec();
     }catch(error) {
-          throw new Error('Question  can\'t be create'.concat(' > ', error.message));
+          throw new Error('Question  can\'t be update'.concat(' > ', error.message));
       }
   };
   
   /**
    * LOGIC :
    */
-  const createQuestion = async (req, res) => {
+  const updateQuestion = async (req, res) => {
     try {
       const inputs = await secure(req);
   
       const param = await process(inputs);
-
-  
-      res.status(200).json(param);
+      
+        res.status(200).json(param);
     } catch (error) {
       console.log("ERROR MESSAGE :", error.message);
       console.log("ERROR :", error);
       res.status(400).json({ message: error.message });
     }
   };
-  module.exports = createQuestion;
+  module.exports = updateQuestion;

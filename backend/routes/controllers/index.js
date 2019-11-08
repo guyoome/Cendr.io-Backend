@@ -15,5 +15,7 @@ module.exports = {
     // question handlers
     CreateQuestion: require('./question/Create'),
     ReadQuestions: require('./question/Read'),
-    ReadQuestion: require('./question/ReadOne')
+    ReadQuestion: require('./question/ReadOne'),
+    UpdateQuestion: require('./question/Update'),
+    DeleteQuestion: require('./question/Delete')
 };

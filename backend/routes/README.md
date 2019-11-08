@@ -99,6 +99,52 @@ res
 }]
 */
 ```
+## ReadQuestion
+
+```javascript
+{}
+
+/* POSTMAN
+req
+{
+    params {
+        id : Number
+    }
+}
+res
+{        "_id": "5dc43aa8809e2a11a8a19aba",
+        "userID": "objectid(5dc426e59963700c116b1081)",
+        "text": "Ceci est un question ?",
+        "proposal_a": "oui",
+        "proposal_b": "non",
+        "lifeTime": "05/03/2020",
+        "__v": 0
+}
+*/
+```
+
+## UpdateQuestion
+
+```javascript
+{
+    text:string,
+    userID:string,
+    proposal_a:string,
+    proposal_b:string,
+    lifeTime: date
+
+}
+
+/* POSTMAN
+req {
+        "text":"Ceci est un question ?",
+        "userID":"ObjectID(5dc426e59963700c116b1081)",
+        "proposal_a":"Oui",
+        "proposal_b":"Non",
+        "lifeTime":"05/03/2020"
+}
+*/
+```
 
 ## ReadQuestion
 
@@ -123,5 +169,6 @@ res
 }
 */
 ```
+
 
 
