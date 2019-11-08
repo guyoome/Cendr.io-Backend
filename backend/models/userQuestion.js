@@ -1,4 +1,4 @@
-const { Shema, model } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const name  = 'User_Question';
 
@@ -11,10 +11,12 @@ const attributes = {
         type: String,
         required: true
     }
-}
+};
 
 const options = {};
 
-const UserQuestionShema = new Shema(attributes, options);
+const UserQuestionShema = new Schema(attributes, options);
+
 const UserQuestionModel = model(name, UserQuestionShema);  
+
 module.exports = UserQuestionModel;

@@ -19,6 +19,9 @@ const { RegisterUser, LoginUser } = require('@controllers');
 // QUESTION IMPORT
 const { CreateQuestion, ReadQuestions, ReadQuestion, UpdateQuestion, DeleteQuestion } = require('@controllers');
 
+// USER QUESTION IMPORT
+const { CreateUserQuestion, ReadUserQuestions, ReadUserQuestion, UpdateUserQuestion, DeleteUserQuestion } = require('@controllers');
+
 /**
  * Routes
  */

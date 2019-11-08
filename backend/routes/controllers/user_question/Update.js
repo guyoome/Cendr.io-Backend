@@ -46,7 +46,7 @@ const secure = async (req) => {
   /**
    * LOGIC :
    */
-  const updateQuestion = async (req, res) => {
+  const updateUserQuestion = async (req, res) => {
     try {
       const inputs = await secure(req);
   
@@ -59,4 +59,4 @@ const secure = async (req) => {
       res.status(400).json({ message: error.message });
     }
   };
-  module.exports = updateQuestion;
+  module.exports = updateUserQuestion;
