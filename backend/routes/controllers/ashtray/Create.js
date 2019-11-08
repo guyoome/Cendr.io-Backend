@@ -39,8 +39,8 @@ const process = async (param) => {
     console.log('inputs: ', inputs);
 
     try {
-        await AshtrayModel.create(inputs);
-        return inputs;
+        const data = await AshtrayModel.create(inputs);
+        return data;
     } catch (error) {
         throw new Error('Ashtray can\'t be create'.concat(' > ', error.message));
     }
@@ -54,9 +54,9 @@ const createAshtray = async (req, res) => {
     try {
         const inputs = await secure(req);
 
-        const result = await process(inputs);
+        const data = await process(inputs);
 
-        res.status(200).json({ result });
+        res.status(200).json({ data });
     } catch (error) {
         console.log('ERROR MESSAGE :', error.message);
         console.log('ERROR :', error);
