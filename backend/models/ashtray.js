@@ -41,10 +41,6 @@ const attributes = {
     UpdatedAt: {
         type: String,
         required: true
-    },
-    token: {
-        type: String,
-        required: true
     }
 
 };
