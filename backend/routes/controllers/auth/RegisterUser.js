@@ -28,12 +28,13 @@ const secure = async (req) => {
         throw new Error('Email don\'t follow rules');
     }
     try {
-        const auth = await AuthModel.findOne({ email: req.body.email });
-        if (!(auth === null) || !(auth === undefined)) {
+        const auth = await AuthModel.findOne({ email: req.body.email }).exec();
+
+        if (!(auth === null)) {
             throw new Error('Email : Already exist');
         }
     } catch (error) {
-        throw new Error('Email : Already exist');
+        throw new Error('Email : error'.concat(' > ', error.message));
     }
     inputs.email = req.body.email;
 
