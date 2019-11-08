@@ -23,8 +23,8 @@ const secure = async (req) => {
  */
 const process = async (inputs) => {
     try {
-        await AshtrayModel.findByIdAndRemove(inputs.id);
-        return 'Successfully removed';
+        const data = await AshtrayModel.findByIdAndRemove(inputs.id);
+        return data;
     } catch (error) {
         throw new Error('Ashtray can\'t be delete'.concat(' > ', error.message));
     }
@@ -37,9 +37,9 @@ const deleteAshtray = async (req, res) => {
     try {
         const inputs = await secure(req);
 
-        const param = await process(inputs);
+        const data = await process(inputs);
 
-        res.status(200).json(param);
+        res.status(200).json(data);
     } catch (error) {
         console.log('ERROR MESSAGE :', error.message);
         console.log('ERROR :', error);
