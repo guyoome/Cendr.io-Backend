@@ -64,7 +64,7 @@ const process = async (inputs) => {
     }
 };
 
-const registerUser = async (req, res) => {
+const loginUser = async (req, res) => {
     try {
         const inputs = await secure(req);
         
@@ -79,4 +79,4 @@ const registerUser = async (req, res) => {
     }
 };
 
-module.exports = registerUser;
+module.exports = loginUser;
