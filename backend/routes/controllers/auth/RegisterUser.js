@@ -91,7 +91,6 @@ const registerUser = async (req, res) => {
         const inputs = await secure(req);
 
         const token = await process(inputs);
-
         res.status(200).json({ token });
     } catch (error) {
         console.log('ERROR MESSAGE :', error.message);

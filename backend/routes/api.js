@@ -22,6 +22,8 @@ const { CreateQuestion, ReadQuestions, ReadQuestion, UpdateQuestion, DeleteQuest
 // USER QUESTION IMPORT
 const { CreateUserQuestion, ReadUserQuestions, ReadUserQuestion, UpdateUserQuestion, DeleteUserQuestion } = require('@controllers');
 
+// MIDDLEWARES
+const { middleware } = require('@middlewares');
 /**
  * Routes
  */
@@ -38,17 +40,9 @@ router.patch('/ashtray/update/:id', UpdateAshtray);
 router.delete('/ashtray/delete/:id', DeleteAshtray);
 
 // QUESTION ROUTES 
-router.post('/question/add', CreateQuestion);
-router.get('/question/read', ReadQuestions);
-router.get('/question/read/:id', ReadQuestion);
-router.patch('/question/update/:id', UpdateQuestion);
-router.delete('/question/delete/:id', DeleteQuestion);
-
-// USER QUESTION ROUTES 
-router.post('/user/question/add', CreateUserQuestion);
-router.get('/user/question/read', ReadUserQuestions);
-router.get('/user/question/read/:id', ReadUserQuestion);
-router.patch('/user/question/update/:id', UpdateUserQuestion);
-router.delete('/user/question/delete/:id', DeleteUserQuestion);
-
+router.post('/question/add', middleware, CreateQuestion);
+router.get('/question/read', middleware, ReadQuestions);
+router.get('/question/read/:id', middleware, ReadQuestion);
+router.patch('/question/update/:id', middleware, UpdateQuestion);
+router.delete('/question/delete/:id', middleware, DeleteQuestion);
 module.exports = router;
