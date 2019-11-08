@@ -17,10 +17,10 @@
 /* POSTMAN
 /api/register
 {
-    "email": "guimau@gmail.com",
+    "email": "gui@gmail.com",
     "firstname": "guillaume",
     "lastname": "maurin",
-    "password": "password123",
+    "password": "Password123&",
     "company": "amazon"
 }
 */
