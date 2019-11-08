@@ -7,4 +7,6 @@ module.exports = {
     TodoModel: require('./Todo'),
     UserModel: require('./User'),
     AshtrayModel: require('./Ashtray'),
+    QuestionModel: require('./question'),
+    UserQuestionModel: require('./userQuestion')
 };
