@@ -1,6 +1,6 @@
 const { secureInput, formatChecker } = require('@core');
 const { AshtrayModel } = require('@models');
-const { AuthServices } = require('@services');
+const { AshtrayServices } = require('@services');
 
 /**
  * Request structure
@@ -43,7 +43,7 @@ const process = async (param) => {
     try {
        const data = await AshtrayModel.create(inputs);
         
-       const token = AuthServices.generateToken(data);
+       const token = AshtrayServices.generateToken(data);
 
         return token;
     } catch (error) {
