@@ -37,8 +37,8 @@
 /* POSTMAN
 /api/login
 {
-    "email": "guimau@gmail.com",
-    "password": "password123"
+    "email": "gui@gmail.com",
+    "password": "Password123&"
 }
 */
 ```
@@ -59,5 +59,15 @@
     "userID":"ObjectID(5dc002f4c8b9dc24c84a31ce)",
     "questionID":"ObjectID(5dc001fda43e0b49543c45b1)"
 }
+*/
+```
+
+## DeleteAshtray
+
+```javascript
+:id===ObjectID();
+
+/* POSTMAN
+/api/ashtray/delete/:id
 */
 ```
