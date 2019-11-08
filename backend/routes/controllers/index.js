@@ -4,7 +4,7 @@ module.exports = {
 
     // Ashtray handlers
     CreateAshtray: require('./ashtray/Create'),
-    Delete: require('./todo/Delete'),
+    DeleteAshtray: require('./ashtray/Delete'),
     Read: require('./todo/Read'),
     Update: require('./todo/Update'),
 
