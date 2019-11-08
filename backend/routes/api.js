@@ -11,7 +11,7 @@ const router = Router();
  * Controllers imports
  */
 // TODO IMPORT
-const { Read, CreateAshtray, Delete, Update } = require('@controllers');
+const { Read, CreateAshtray, DeleteAshtray, Update } = require('@controllers');
 
 // AUTH IMPORT
 const { RegisterUser, LoginUser } = require('@controllers');
@@ -26,7 +26,7 @@ router.post('/login', LoginUser);
 // TODO ROUTES
 router.get('/all', Read);
 router.post('/ashtray/create', CreateAshtray);
-router.delete('/delete/:id', Delete);
+router.delete('/ashtray/delete/:id', DeleteAshtray);
 router.patch('/update/:id', Update);
 
 module.exports = router;
