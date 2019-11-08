@@ -4,9 +4,11 @@ module.exports = {
 
     // Ashtray handlers
     CreateAshtray: require('./ashtray/Create'),
+    ReadOneAshtray: require('./ashtray/ReadOne'),
+    ReadAshtray: require('./ashtray/Read'),
+    ResetAshtray: require('./ashtray/Reset'),
+    UpdateAshtray: require('./ashtray/Update'),
     DeleteAshtray: require('./ashtray/Delete'),
-    Read: require('./todo/Read'),
-    Update: require('./todo/Update'),
 
     // auth handlers
     RegisterUser: require('./auth/RegisterUser'),

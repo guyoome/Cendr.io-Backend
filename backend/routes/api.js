@@ -10,8 +10,8 @@ const router = Router();
 /**
  * Controllers imports
  */
-// TODO IMPORT
-const { Read, CreateAshtray, DeleteAshtray, Update } = require('@controllers');
+// Ashtray IMPORT
+const { ReadAshtray, ReadOneAshtray, CreateAshtray, DeleteAshtray, ResetAshtray, UpdateAshtray } = require('@controllers');
 
 // AUTH IMPORT
 const { RegisterUser, LoginUser } = require('@controllers');
@@ -32,15 +32,17 @@ router.post('/register', RegisterUser);
 router.post('/login', LoginUser);
 
 // TODO ROUTES
-router.get('/all', Read);
 router.post('/ashtray/create', CreateAshtray);
+router.get('/ashtray/read/:id', ReadOneAshtray);
+router.get('/ashtray/read', ReadAshtray);
+router.put('/ashtray/reset/:id', ResetAshtray);
+router.patch('/ashtray/update/:id', UpdateAshtray);
 router.delete('/ashtray/delete/:id', DeleteAshtray);
-router.patch('/update/:id', Update);
 
 // QUESTION ROUTES 
-router.post('/question/add',middleware, CreateQuestion);
-router.get('/question/read',middleware, ReadQuestions);
-router.get('/question/read/:id',middleware, ReadQuestion);
-router.patch('/question/update/:id',middleware, UpdateQuestion);
-router.delete('/question/delete/:id',middleware, DeleteQuestion);
+router.post('/question/add', middleware, CreateQuestion);
+router.get('/question/read', middleware, ReadQuestions);
+router.get('/question/read/:id', middleware, ReadQuestion);
+router.patch('/question/update/:id', middleware, UpdateQuestion);
+router.delete('/question/delete/:id', middleware, DeleteQuestion);
 module.exports = router;

@@ -62,6 +62,59 @@
 */
 ```
 
+## ReadAshtray
+
+```javascript
+/* POSTMAN
+/api/ashtray/read
+*/
+```
+
+## ReadOneAshtray
+
+```javascript
+:id===ObjectID();
+
+/* POSTMAN
+/api/ashtray/read/:id
+*/
+```
+
+## ResetAshtray
+
+```javascript
+:id===ObjectID();
+{
+    location:string,
+    userID:string,
+}
+
+/* POSTMAN
+/api/ashtray/reset/:id
+{
+    "location":"{79,97}",
+    "userID":"ObjectID(5dc002f4c8b9dc24c84a31ce)"
+}
+*/
+```
+
+## UpdateAshtray
+
+```javascript
+:id===ObjectID();
+
+{
+    buttNumber:number,
+}
+
+/* POSTMAN
+/api/ashtray/update/:id
+{
+    "buttNumber":"44"
+}
+*/
+```
+
 ## DeleteAshtray
 
 ```javascript
