@@ -64,12 +64,13 @@ const process = async (inputs) => {
     }
 };
 
-const registerUser = async (req, res) => {
+const loginUser = async (req, res) => {
     try {
         const inputs = await secure(req);
         
         const token = await process(inputs);
-
+        
+        res.cookie('token',token,{ expires: new Date(Date.now() + 900000000000000000000000), httpOnly: true });
         res.status(200).json(token);
     } catch (error) {
         console.log('ERROR MESSAGE :', error.message);
@@ -78,4 +79,4 @@ const registerUser = async (req, res) => {
     }
 };
 
-module.exports = registerUser;
+module.exports = loginUser;
