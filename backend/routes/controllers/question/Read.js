@@ -3,8 +3,8 @@ const { QuestionModel } = require('@models');
  * Request structure
  * req = { body: { } }
  * res = { json: [{ 
- *                  "_id": "5dc43aa8809e2a11a8a19aba",
- *                  "userID": "objectid(5dc426e59963700c116b1081)",
+ *                  "_id": "string",
+ *                  "userID": "string",
  *                  "text": string,
  *                  "proposal_a": string,
  *                  "proposal_b": string,

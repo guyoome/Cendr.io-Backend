@@ -1,4 +1,6 @@
+const { secureInput } =require('@core');
 const { UserQestionModel } = require('@models');
+
 /**
  * Request structure
  * req = { body: { userId : String, questionId : String } }
@@ -13,9 +15,13 @@ const secure = async (req) => {
     if(req.body.userId === undefined || req.body.userId === null){
         throw new Error('userId is null/undefined');
     }
+    inputs.userId  = secureInput.sanitizeString(req.body.userId);
+
     if(req.body.questionId === undefined || req.body.questionId === null){
         throw new Error('questionId is null/undefined');
     }
+    inputs.questionId  = secureInput.sanitizeString(req.body.questionId);
+
     return inputs;
   };
   
@@ -47,3 +53,4 @@ const secure = async (req) => {
       res.status(400).json({ message: error.message });
     }
   };
+  module.exports = createUserQuestion;

@@ -39,4 +39,11 @@ router.get('/question/read/:id',ReadQuestion);
 router.patch('/question/update/:id',UpdateQuestion);
 router.delete('/question/delete/:id',DeleteQuestion);
 
+// USER QUESTION ROUTES 
+router.post('/user/question/add', CreateUserQuestion);
+router.get('/user/question/read',ReadUserQuestions);
+router.get('/user/question/read/:id',ReadUserQuestion);
+router.patch('/user/question/update/:id',UpdateUserQuestion);
+router.delete('/user/question/delete/:id',DeleteUserQuestion);
+
 module.exports = router;

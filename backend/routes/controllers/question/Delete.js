@@ -10,7 +10,6 @@ const { QuestionModel } = require('@models');
  */
 const secure = async (req) => {
     const inputs = {};
-    console.log(req.params.id)
     if(req.params.id === undefined || req.params.id === null){
         throw new Error('Id is null or undefined');
     }

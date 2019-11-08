@@ -17,5 +17,12 @@ module.exports = {
     ReadQuestions: require('./question/Read'),
     ReadQuestion: require('./question/ReadOne'),
     UpdateQuestion: require('./question/Update'),
-    DeleteQuestion: require('./question/Delete')
+    DeleteQuestion: require('./question/Delete'),
+
+    // user question handlers
+    CreateUserQuestion: require('./user/question/Create'),
+    ReadUserQuestions: require('./user/question/Read'),
+    ReadUserQuestion: require('./user/question/ReadOne'),
+    UpdateUserQuestion: require('./user/question/Update'),
+    DeleteUserQuestion: require('./user/question/Delete'),
 };
