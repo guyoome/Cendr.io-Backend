@@ -41,9 +41,9 @@ const process = async (param) => {
     console.log('inputs: ', inputs);
 
     try {
-        const data = await AshtrayModel.create(inputs);
-
-        const token = AshtrayServices.generateToken(data);
+       const data = await AshtrayModel.create(inputs);
+        
+       const token = AshtrayServices.generateToken(data);
 
         return token;
     } catch (error) {
@@ -60,7 +60,6 @@ const createAshtray = async (req, res) => {
         const inputs = await secure(req);
 
         const data = await process(inputs);
-
 
         res.status(200).json({ data });
 
